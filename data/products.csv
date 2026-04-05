@@ -1,0 +1,11 @@
+product_id,name,category,price,image_path,description
+1,Blue Cotton Shirt,Clothing,29.99,images/img1.jpg,Casual blue cotton t-shirt
+2,Red Cotton Shirt,Clothing,32.50,images/img2.jpg,Bright red casual shirt
+3,Black Leather Jacket,Clothing,89.99,images/img3.jpg,Premium leather jacket
+4,White Sneakers,Footwear,59.99,images/img4.jpg,Classic white sneakers
+5,Black Sneakers,Footwear,64.99,images/img5.jpg,Black running shoes
+6,Blue Jeans,Clothing,45.00,images/img6.jpg,Slim fit blue jeans
+7,Black Jeans,Clothing,48.00,images/img7.jpg,Black skinny jeans
+8,Red Dress,Clothing,69.99,images/img8.jpg,Elegant red dress
+9,Blue Dress,Clothing,72.50,images/img9.jpg,Navy blue cocktail dress
+10,Green T-Shirt,Clothing,24.99,images/img10.jpg,Eco green cotton tee
