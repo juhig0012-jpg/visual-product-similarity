@@ -1,3 +1,10 @@
+import os
+
+# torch and faiss each ship their own OpenMP runtime DLL - loading both in the
+# same process trips "OMP: Error #15" on Windows. Has to be set before either
+# gets imported below.
+os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
+
 import faiss
 import numpy as np
 import torch
