@@ -16,7 +16,10 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+.ipynb_checkpoints/
 
-# Generated data/model artifacts - regenerate locally with the src/ scripts
-data/raw_images/
+# Generated locally by the pipeline scripts - not the source images themselves
 data/processed/
+models/*.npy
+models/*.bin
+models/*.pkl
