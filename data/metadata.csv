@@ -1,0 +1,59 @@
+image_name,product_id,category,title,price,availability
+img1.jpg,P001,Clothing,Blue Cotton Shirt,29.99,In Stock
+img2.jpg,P002,Clothing,Red Cotton Shirt,32.5,In Stock
+img3.jpg,P003,Clothing,Black Leather Jacket,89.99,In Stock
+img4.jpg,P004,Footwear,White Sneakers,59.99,In Stock
+img6.jpg,P005,Clothing,Blue Jeans,45.0,In Stock
+img8.jpg,P006,Clothing,Red Dress,69.99,In Stock
+img11.jpg,P007,Footwear,Black Ankle Boots,79.35,In Stock
+img12.jpg,P008,Clothing,Striped Polo Shirt,31.22,In Stock
+img13.jpg,P009,Clothing,Beige Chinos,41.92,In Stock
+img15.jpg,P010,Accessories,Leather Belt,21.55,In Stock
+img16.jpg,P011,Accessories,Canvas Tote Bag,16.24,In Stock
+img17.jpg,P012,Clothing,Grey Hoodie,40.75,Out of Stock
+img18.jpg,P013,Clothing,Navy Blazer,94.96,In Stock
+img19.jpg,P014,Footwear,White Sneakers,60.85,In Stock
+img21.jpg,P015,Footwear,Brown Loafers,76.15,In Stock
+img22.jpg,P016,Clothing,Denim Jacket,59.87,In Stock
+img23.jpg,P017,Clothing,Floral Summer Dress,53.84,In Stock
+img26.jpg,P018,Footwear,Running Shoes,66.58,In Stock
+img27.jpg,P019,Footwear,Black Ankle Boots,82.83,In Stock
+img28.jpg,P020,Clothing,Striped Polo Shirt,34.29,In Stock
+img31.jpg,P021,Clothing,Beige Chinos,41.86,In Stock
+img33.jpg,P022,Accessories,Leather Belt,23.08,In Stock
+img35.jpg,P023,Accessories,Canvas Tote Bag,17.38,In Stock
+img36.jpg,P024,Clothing,Grey Hoodie,39.71,In Stock
+img37.jpg,P025,Clothing,Navy Blazer,96.27,In Stock
+img38.jpg,P026,Footwear,White Sneakers,56.45,In Stock
+img41.jpg,P027,Footwear,Brown Loafers,74.15,Out of Stock
+img43.jpg,P028,Clothing,Denim Jacket,63.38,In Stock
+img44.jpg,P029,Clothing,Floral Summer Dress,57.87,In Stock
+img45.jpg,P030,Footwear,Running Shoes,68.01,In Stock
+img46.jpg,P031,Footwear,Black Ankle Boots,79.91,In Stock
+img48.jpg,P032,Clothing,Striped Polo Shirt,31.24,In Stock
+img51.jpg,P033,Clothing,Beige Chinos,46.09,In Stock
+img53.jpg,P034,Accessories,Leather Belt,24.25,In Stock
+img55.jpg,P035,Accessories,Canvas Tote Bag,19.67,In Stock
+img56.jpg,P036,Clothing,Grey Hoodie,40.47,In Stock
+img58.jpg,P037,Clothing,Navy Blazer,96.54,Out of Stock
+img59.jpg,P038,Footwear,White Sneakers,57.83,In Stock
+img60.jpg,P039,Footwear,Brown Loafers,71.36,In Stock
+img61.jpg,P040,Clothing,Denim Jacket,62.88,Out of Stock
+img62.jpg,P041,Clothing,Floral Summer Dress,56.92,In Stock
+img63.jpg,P042,Footwear,Running Shoes,67.81,In Stock
+img66.jpg,P043,Footwear,Black Ankle Boots,79.14,In Stock
+img68.jpg,P044,Clothing,Striped Polo Shirt,32.01,In Stock
+img69.jpg,P045,Clothing,Beige Chinos,41.85,In Stock
+img70.jpg,P046,Accessories,Leather Belt,19.78,In Stock
+img71.jpg,P047,Accessories,Canvas Tote Bag,17.85,Out of Stock
+img73.jpg,P048,Clothing,Grey Hoodie,37.47,In Stock
+img76.jpg,P049,Clothing,Navy Blazer,94.8,Out of Stock
+img78.jpg,P050,Footwear,White Sneakers,59.91,Out of Stock
+img81.jpg,P051,Footwear,Brown Loafers,72.67,In Stock
+img83.jpg,P052,Clothing,Denim Jacket,61.15,Out of Stock
+img86.jpg,P053,Clothing,Floral Summer Dress,57.74,In Stock
+img88.jpg,P054,Footwear,Running Shoes,66.56,In Stock
+img91.jpg,P055,Footwear,Black Ankle Boots,80.4,In Stock
+img93.jpg,P056,Clothing,Striped Polo Shirt,34.53,In Stock
+img96.jpg,P057,Clothing,Beige Chinos,41.52,In Stock
+img98.jpg,P058,Accessories,Leather Belt,21.22,In Stock

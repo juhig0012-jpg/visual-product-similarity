@@ -34,9 +34,22 @@ class ProductImageDataset(Dataset):
 
     def __getitem__(self, idx):
         image_path = self.image_paths[idx]
-        image = load_image(image_path)
+        try:
+            image = load_image(image_path)
+        except ValueError as exc:
+            # one bad file shouldn't kill a run over a few thousand images -
+            # skip it and flag it so it's obvious afterward which ones failed
+            print(f"Skipping unreadable image: {exc}")
+            return None
         image = self.transform(image)
         return image, str(image_path)
+
+
+def _skip_unreadable(batch):
+    batch = [item for item in batch if item is not None]
+    if not batch:
+        return None
+    return torch.utils.data.dataloader.default_collate(batch)
 
 
 def extract_embeddings():
@@ -51,7 +64,7 @@ def extract_embeddings():
 
     transform = get_preprocess_transform()
     dataset = ProductImageDataset(image_paths, transform)
-    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=False)
+    dataloader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=False, collate_fn=_skip_unreadable)
 
     device = get_device()
     model = build_feature_extractor().to(device)
@@ -60,7 +73,10 @@ def extract_embeddings():
     all_paths = []
 
     with torch.no_grad():
-        for batch_images, batch_paths in tqdm(dataloader, desc="Extracting embeddings"):
+        for batch in tqdm(dataloader, desc="Extracting embeddings"):
+            if batch is None:
+                continue
+            batch_images, batch_paths = batch
             batch_images = batch_images.to(device)
             features = model(batch_images)
             features = features.view(features.size(0), -1)

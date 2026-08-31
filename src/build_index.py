@@ -10,7 +10,12 @@ def build_faiss_index():
     embeddings = np.load(EMBEDDINGS_FILE).astype("float32")
     dimension = embeddings.shape[1]
 
-    index = faiss.IndexFlatIP(dimension)
+    # HNSW graph index instead of a flat index - actual ANN search instead of
+    # brute force, so this doesn't fall over once the catalog is more than a
+    # few thousand images. inner product on the L2-normalized embeddings we
+    # already saved = cosine similarity.
+    index = faiss.IndexHNSWFlat(dimension, 32, faiss.METRIC_INNER_PRODUCT)
+    index.hnsw.efConstruction = 40
     index.add(embeddings)
 
     faiss.write_index(index, str(FAISS_INDEX_FILE))

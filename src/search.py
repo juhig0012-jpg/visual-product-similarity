@@ -37,6 +37,8 @@ class VisualSearchEngine:
 
     def search(self, query_image_path, top_k=TOP_K, category=None, min_price=None, max_price=None, availability=None):
         query_embedding = self.extract_query_embedding(query_image_path)
+        # over-fetch since category/price/availability filters below can knock
+        # out most of the top matches - grab 5x and trim after filtering
         scores, indices = self.index.search(query_embedding, top_k * 5)
 
         results = []

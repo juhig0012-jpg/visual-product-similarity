@@ -21,9 +21,13 @@ def load_engine():
     return VisualSearchEngine()
 
 
-engine = load_engine()
+@st.cache_data
+def load_metadata():
+    return pd.read_csv(METADATA_CSV) if Path(METADATA_CSV).exists() else pd.DataFrame()
 
-metadata_df = pd.read_csv(METADATA_CSV) if Path(METADATA_CSV).exists() else pd.DataFrame()
+
+engine = load_engine()
+metadata_df = load_metadata()
 
 categories = sorted(metadata_df["category"].dropna().unique().tolist()) if "category" in metadata_df.columns else []
 availability_options = sorted(metadata_df["availability"].dropna().unique().tolist()) if "availability" in metadata_df.columns else []

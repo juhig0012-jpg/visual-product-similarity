@@ -34,7 +34,10 @@ def get_preprocess_transform():
 
 
 def load_image(image_path):
-    image = Image.open(image_path).convert("RGB")
+    try:
+        image = Image.open(image_path).convert("RGB")
+    except (OSError, ValueError) as exc:
+        raise ValueError(f"Could not read image {image_path}: {exc}") from exc
     return image
 
 
@@ -45,6 +48,8 @@ def load_and_preprocess_image(image_path):
 
 
 def build_feature_extractor():
+    # drop the final fc layer - we want the 2048-dim pooled features, not a
+    # 1000-way ImageNet class prediction
     weights = models.ResNet50_Weights.DEFAULT
     model = models.resnet50(weights=weights)
     feature_extractor = torch.nn.Sequential(*list(model.children())[:-1])
@@ -53,8 +58,9 @@ def build_feature_extractor():
 
 
 def l2_normalize(vectors):
+    # once these are unit-length, FAISS inner product == cosine similarity
     norms = np.linalg.norm(vectors, axis=1, keepdims=True)
-    norms[norms == 0] = 1e-10
+    norms[norms == 0] = 1e-10  # avoid dividing an all-zero vector by zero
     return vectors / norms
 
 
